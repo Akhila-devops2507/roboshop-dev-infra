@@ -1,0 +1,32 @@
+# Local Terraform directories
+**/.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Sensitive variable files (if not managed securely elsewhere)
+*.tfvars
+*.tfvars.json
+
+# Terraform plan files
+*.tfplan
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local provider cache (if not within .terraform/)
+.terraform.d/
+
+# VS Code specific files (optional, but common)
+.vscode/
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
