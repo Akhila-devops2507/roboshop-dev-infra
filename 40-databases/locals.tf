@@ -4,7 +4,8 @@ locals {
   database_subnet_id = split(",", data.aws_ssm_parameter.database_subnet_ids.value)[0]
   ami_id = data.aws_ami.joindevops.id
   common_tags = {
-    var.environment = var.environment
-    terraform = "true"
+      Project = var.project_name
+      Environment = var.environment
+      Terraform = "true"
   }
 }
