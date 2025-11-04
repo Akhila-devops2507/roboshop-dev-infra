@@ -25,19 +25,17 @@ resource "terraform_data" "mongodb" {
     host     = aws_instance.mongodb.private_ip
   }
 
+  #terraform copies this file to mongodb server
+  provisioner "file" {
+    source = "bootstrap.sh"
+    destination = "/tmp/bootstrap.sh"
+  }
+
   provisioner "remote-exec" {
-        inline = [
-            "echo hello world"
-        ]
-        #     "sudo yum install -y mongodb-org",
-        #     "sudo systemctl start mongod",
-        #     "sudo systemctl enable mongod"
-        # ]
-        # connection {
-        #     type        = "ssh"
-        #     user        = "ec2-user"
-        #     private_key = file(var.ssh_private_key_path)
-        #     host        = self.public_ip
-        
-    }
+    inline = [
+        "chmod +x /tmp/bootstrap.sh",
+        # "sudo sh /tmp/bootstrap.sh"
+        "sudo sh /tmp/bootstrap.sh mongodb"
+    ]
+  }
 }
