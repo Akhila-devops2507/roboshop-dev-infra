@@ -22,3 +22,11 @@ variable "sg_names" {
         "backend_alb"
     ]
 }
+
+variable "zone_id" {
+    default = Z05335291MAWEUN326PVQ
+}
+
+variable "domain_name" {
+    default = "akhiladevops.fun"
+}
