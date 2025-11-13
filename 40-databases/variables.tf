@@ -24,7 +24,7 @@ variable "sg_names" {
 }
 
 variable "zone_id" {
-    default = Z05335291MAWEUN326PVQ
+    default = "Z05335291MAWEUN326PVQ"
 }
 
 variable "domain_name" {
